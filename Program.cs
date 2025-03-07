@@ -8,9 +8,9 @@ namespace PlusOuMoins
         {
             Console.WriteLine("Bienvenue au jeu de devinette !");
             Random random = new Random();
-            int hazard = random.Next(1,1000);
-            int lastPos = 1000;
+            int lastPos = 100;
             int lastNeg = 1;
+            int hazard = random.Next(lastNeg,lastPos);
             int cherche = lastNeg;
 
             int coups = 0;
@@ -19,14 +19,13 @@ namespace PlusOuMoins
                 {
                     Console.WriteLine("+");
                     lastNeg = cherche;
-                    cherche = random.Next(lastNeg, lastPos);
                 }
                 else if(cherche > hazard)
                 {
                     Console.WriteLine("-");
                     lastPos = cherche;
-                    cherche = random.Next(lastNeg, lastPos);
                 }
+                cherche = random.Next(lastNeg, lastPos);
                 coups ++;
                 Console.WriteLine($"[ {lastNeg} \t| {cherche} <--> {hazard} \t| {lastPos} ]");
             }while(cherche != hazard);
