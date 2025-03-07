@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace mSoftLearn
+namespace PlusOuMoins
 {
     class Program
     {
